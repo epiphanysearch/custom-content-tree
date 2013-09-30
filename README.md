@@ -34,7 +34,5 @@ Once the package has been installed, you will see that a new config file `custom
 ## KNOWN ISSUES/LIMITATIONS
 
 - if for some reason you define multiple trees for the same user, only the first one will be used.
-
 - the dependency on the CustomMenus package.
-
 - because of the way the tree is rendered, events cannot be fired on the new root nodes, I'm looking into a way round this.
