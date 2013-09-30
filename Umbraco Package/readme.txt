@@ -1,0 +1,12 @@
+This project allows you to set up custom content trees for the users of the back office. Out of the box, you can only set up a user to have one starting node. What if you want to allow users access to several sections of the site, or a section and a settings node?
+
+We've created this simple package that allows you to do just that. The package installs a DLL and a config file, that you can edit to create custom content trees for your users. This works by overriding the existing content tree, rather than requiring you to create new sections for the back ofice.
+
+The trees should respect all of the usual permissions etc that the standard tree does, and there's a config option that allows you to make it play nicely with the AttackMonkey CustomMenus package, if you're using that as well (it does this using reflection, so there's no hard coded dependencies, just set the flag to false and ignore it if you don't use that package).
+
+The config file consists of the following elements:
+
+useCustomMenus - this is set to false by default. If you have AttackMonkey CustomMenus installed and are using it, set this to true. WARNING: setting this to true without CustomMenus installed will cause the package to fail.
+rules - these are the trees that you can set up, you can set up as amny trees as you need, and you can alow multiple users to use the same trees if you wish, the format of the items underneath are: tree, which has the property "userIds" which can either be a single back office user ID, or a comma separated list of the IDs, underneath each tree you can add one or more "node" elements which have two properties "id" which is the id of the node to add to the tree and "hideForDialog" which can be set to true or false, setting this to true means that the node won't appear in node picker controls, so for example you could have a settings node that appears in the content tree but can't be selected using the link picker.
+The config file has an example tree configured, you will need to replace this with your own tree definitions.
+This is currently an early version, we've got it running on one live site at the moment, so test thoroughly before using on your ownb sites. Please leave any feedback on the forums provided, we'd love to hear what people think of the package!
